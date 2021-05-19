@@ -12,18 +12,18 @@
     <header>
       <h2 id="location">Current Location</h2>
       <form id="weatherSearch">
-        <input name="searchValue" id="searchValue" type="text" placeholder="Enter Location">
+        <input name="searchValue" id="searchValue" type="text" value="San Antonio">
         <button type="submit">Search</button>
       </form>
     </header>
+    <h1>Weather App</h1>
     <main>
-      <h1>Weather App</h1>
       <section class="current">
         <h2>Current Weather</h2>
         <div class="current_main"></div>
       </section>
       <section class="forecast">
-        <h2>Forcast</h2>
+        <h2>3-Day Forcast</h2>
         <div class="forecast_all">
           <div class="forecast_item">
             <p class="forecast_item--date">2021-05-18</p>
@@ -37,7 +37,9 @@
           </div>
         </div>
       </section>
-
+      <section class="right-column">
+        <h2>Right Column</h2>
+      </section>
     </main>
     <script type="module" src="/main.js"></script>
   </body>

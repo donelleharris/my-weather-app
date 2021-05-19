@@ -10,4 +10,35 @@ body{
   background-color: #00222C;
   color: lightgray;
   font-family: 'Quicksand', sans-serif;
+  margin: 0 2rem;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main{
+  display: flex;
+}
+.current{
+  margin-right: 2rem;
+}
+.forecast{
+  margin: 0 2rem;
+  flex-grow: 2;
+}
+.forecast_all{
+  display: flex;
+  justify-content: space-between;
+}
+.forecast_item:not(:first-child){
+  margin: 0 2rem;
+}
+.right-column{
+  margin-left: 2rem;
+  padding: 1rem;
+  background-color: lightgray;
+  color: #2c3e50;
+  font-weight: bold;
+  border-radius: .5rem;
 }
