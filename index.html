@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <header>
+      <h2 id="location">Current Location</h2>
+      <form id="weatherSearch">
+        <input name="searchValue" id="searchValue" type="text" placeholder="Enter Location">
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <main>
+      <h1>Weather App</h1>
+      <section class="current">
+        <h2>Current Weather</h2>
+        <div class="current_main"></div>
+      </section>
+      <section class="forecast">
+        <h2>Forcast</h2>
+        <div class="forecast_all">
+          <div class="forecast_item">
+            <p class="forecast_item--date">2021-05-18</p>
+            <p>Status: <span id="status">Heavy rain</span></p>
+            <img src="//cdn.weatherapi.com/weather/64x64/day/308.png" alt="Heavy rain">
+            <p>UV Index: <span class="uv">7</span></p>
+            <p>High temp: <span class="high">81.5&deg; F</span></p>
+            <p>Low temp: <span class="low">80&deg; F</span></p>
+            <p>Chance of Rain: <span class="rainChance">87&percnt;</span></p>
+            <p>Wind speed: <span class="wind">11.9 mph S</span></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
