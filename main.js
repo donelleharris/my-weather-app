@@ -2,9 +2,10 @@ import './style.css'
 
 let input;
 let searchResult = "San Antonio";
-let currentLocation = document.querySelector("#location");
+let searchNewLocation = document.querySelector("#location");
 async function getWeather(){
-  currentLocation.innerHTML = searchResult;
+
+  searchNewLocation.innerHTML = searchResult;
   const weatherApiKey = "42b8df01e13a4b0791313017211905";
   const weatherApiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${searchResult}&days=3&aqi=no&alerts=no`
   const data = await fetch(weatherApiUrl)
@@ -49,7 +50,7 @@ function buildForecast({date, day}){
     <p>Wind speed: <span class="wind">${day.maxwind_mph} mph S</span></p>
   </div>`
 }
-function searchLocation(e){
-  e.preventDefault()
+function searchLocation(event){
+  event.preventDefault();
   
 }
