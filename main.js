@@ -4,8 +4,7 @@ let input;
 let searchResult = "San Antonio";
 let searchNewLocation = document.querySelector("#location");
 async function getWeather(){
-
-  searchNewLocation.innerHTML = searchResult;
+  // searchNewLocation.innerHTML = searchResult;
   const weatherApiKey = "42b8df01e13a4b0791313017211905";
   const weatherApiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${searchResult}&days=3&aqi=no&alerts=no`
   const data = await fetch(weatherApiUrl)
@@ -13,11 +12,17 @@ async function getWeather(){
     const {current, forecast, location} = await data.json()
     console.log( { current, forecast, location } );
     displayCurrentWeather(current);
+    displayCurrentLocation(location);
     displayForecasts(forecast);
   }
 }
 getWeather();
-
+function displayCurrentLocation(location){
+  const currentCity = 
+  document.querySelector("#location")
+  currentCity.innerHTML = "";
+  currentCity.insertAdjacentHTML("beforeend", location.name + ", " + location.region);
+}
 function displayCurrentWeather(current){
   const currentHtml = 
   `<p>Status: <span class="current_main--status">${current.condition.text}</span></p>
@@ -50,7 +55,9 @@ function buildForecast({date, day}){
     <p>Wind speed: <span class="wind">${day.maxwind_mph} mph S</span></p>
   </div>`
 }
-function searchLocation(event){
-  event.preventDefault();
-  
+function searchLocation(e){
+  e.preventDefault();
+  searchResult = document.getElementById("searchValue").value;
+  getWeather();
 }
+document.querySelector(".search").addEventListener("click", searchLocation)
